@@ -9,6 +9,9 @@ export default {
       selectedMoive: ''
     }
   },
+  async mounted () {
+    await this.fetchMovie()
+  },
   methods: {
     ...mapActions(['fetchMovie'])
   },
@@ -20,5 +23,10 @@ export default {
 
 <template>
   <div class="movieCard">
+    <ul>
+      <li v-for="movie in movies" :key="movie.Title">
+        {{ movie.Title }}
+      </li>
+    </ul>
   </div>
 </template>
