@@ -23,6 +23,10 @@ export default {
 
 <template>
   <div class="movieCard">
+    <div class="searchMovie">
+      <input type="text" placeholder="Film secimi...">
+      <button>Search</button>
+    </div>
     <ul>
       <li v-for="movie in movies" :key="movie.Title">
         {{ movie.Title }}
