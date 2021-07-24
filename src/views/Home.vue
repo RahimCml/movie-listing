@@ -9,7 +9,6 @@ export default {
     MovieCard
   },
   async mounted () {
-    console.log(this.data)
     await this.fetchMovie()
   },
   methods: {
@@ -27,11 +26,8 @@ export default {
       <input type="text" placeholder="Film secimi...">
       <button>Search</button>
     </div>
-    <ul>
-      <li v-for="movie in movies" :key="movie.Title">
-        <MovieCard data="movie"/>
-        <p>{{ movie.Title }} year {{movie.Year}}</p>
-      </li>
-    </ul>
+      <div v-for="movie in movies" :key="movie.imdbId">
+        <MovieCard :data="movie"/>
+      </div>
   </div>
 </template>
