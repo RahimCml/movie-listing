@@ -7,21 +7,16 @@ axios.defaults.baseURL = 'https://www.omdbapi.com'
 Vue.use(Vuex)
 
 const Mutations = {
-  SET_MOVIES: 'SET_MOVIES',
-  SET_SEARCH: 'SET_SEARCH'
+  SET_MOVIES: 'SET_MOVIES'
 }
 
 export default new Vuex.Store({
   state: {
-    movies: '',
-    searches: []
+    movies: []
   },
   mutations: {
     [Mutations.SET_MOVIES] (state, movies) {
       state.movies = movies
-    },
-    [Mutations.SET_SEARCH] (state, searches) {
-      state.searches = searches
     }
   },
   actions: {
