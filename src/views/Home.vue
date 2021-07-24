@@ -9,10 +9,10 @@ export default {
     MovieCard
   },
   async mounted () {
-    await this.fetchMovie()
+    await this.fetchMovies()
   },
   methods: {
-    ...mapActions(['fetchMovie'])
+    ...mapActions(['fetchMovies'])
   },
   computed: {
     ...mapState(['movies'])
