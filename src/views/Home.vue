@@ -8,11 +8,16 @@ export default {
   components: {
     MovieCard
   },
-  async mounted () {
-    await this.fetchMovies()
+  data () {
+    return {
+      search: ''
+    }
+  },
+  async create () {
+    await this.fetchMoviesSearch()
   },
   methods: {
-    ...mapActions(['fetchMovies'])
+    ...mapActions(['fetchMoviesSearch'])
   },
   computed: {
     ...mapState(['movies'])
@@ -23,8 +28,8 @@ export default {
 <template>
   <div class="home">
     <div class="searchMovie">
-      <input type="text" placeholder="Film secimi...">
-      <button>Search</button>
+      <input type="text" v-model="search" placeholder="Film seciniz...">
+      <button @click="fetchMoviesSearch">Search</button>
     </div>
       <div v-for="movie in movies" :key="movie.imdbId">
         <MovieCard :data="movie"/>
