@@ -17,7 +17,10 @@ export default {
     await this.fetchMoviesSearch()
   },
   methods: {
-    ...mapActions(['fetchMoviesSearch'])
+    ...mapActions(['fetchMoviesSearch']),
+    getMoviesWithSearch () {
+      this.fetchMoviesSearch(this.search)
+    }
   },
   computed: {
     ...mapState(['movies'])
@@ -29,7 +32,7 @@ export default {
   <div class="home">
     <div class="searchMovie">
       <input type="text" v-model="search" placeholder="Film seciniz...">
-      <button @click="fetchMoviesSearch">Search</button>
+      <button @click="getMoviesWithSearch">Search</button>
     </div>
       <div v-for="movie in movies" :key="movie.imdbId">
         <MovieCard :data="movie"/>
