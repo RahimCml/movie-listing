@@ -10,13 +10,14 @@ export default {
 
 <template>
   <div class="movieCard">
-    <div class="list">
+      <img :src="data.Poster" alt="image">
       <div class="container">
-        {{data.Title}}
-      </div>
-      <div class="container">
-        {{data.Year}}
-      </div>
+        <p>
+          {{data.Title}}
+        </p>
     </div>
   </div>
 </template>
+
+ <style>
+ </style>
