@@ -49,4 +49,7 @@ export default {
 .container {
   justify-content: center;
 }
+.noFind {
+  padding: 10%
+}
 </style>
