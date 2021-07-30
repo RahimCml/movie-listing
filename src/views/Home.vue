@@ -72,6 +72,22 @@ export default {
   background: white;
   border: none;
 }
+ .searchText {
+  text-indent: 5px;
+  border-radius: 5px 0 0 5px;
+  border: 2px solid #1ac8ed;
+  border-right: none;
+  width: 420px;
+  height: 100%;
+}
+ .searchButton {
+  color: white;
+  background-color: #1ac8ed;
+  padding: 0 10px;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  width: 80px;
+}
 .container {
   justify-content: center;
 }
