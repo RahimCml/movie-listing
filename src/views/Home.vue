@@ -30,9 +30,11 @@ export default {
 
 <template>
   <div class="home">
-    <div class="searchMovie">
-      <input type="text" v-model="search" placeholder="Film seciniz...">
-      <button @click="getMoviesWithSearch">Search</button>
+    <div class="wrapper">
+      <div class="searchMovie">
+        <input type="text" v-model="search" placeholder="Film seciniz...">
+        <button @click="getMoviesWithSearch">Search</button>
+      </div>
     </div>
     <div class="container" v-if="movies">
       <div v-for="movie in movies" :key="movie.imdbId">
