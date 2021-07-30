@@ -32,8 +32,8 @@ export default {
   <div class="home">
     <div class="wrapper">
       <div class="searchMovie">
-        <input type="text" v-model="search" placeholder="Film seciniz...">
-        <button @click="getMoviesWithSearch">Search</button>
+        <input type="text" class="searchText" v-model="search" placeholder="Film seciniz...">
+        <input type="submit" class="searchButton" @click="getMoviesWithSearch" value="GO">
       </div>
     </div>
     <div class="container" v-if="movies">
