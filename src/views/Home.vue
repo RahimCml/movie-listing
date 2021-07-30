@@ -89,6 +89,9 @@ export default {
   width: 80px;
 }
 .container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 25% 25% 25%;
   justify-content: center;
 }
 .noFind {

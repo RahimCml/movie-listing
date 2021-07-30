@@ -7,9 +7,8 @@ export default {
   }
 }
 </script>
-
 <template>
-  <section class="container">
+  <section>
     <div class="card">
       <div>
         <img class="card-image" :src="data.Poster" alt="image">
@@ -22,14 +21,7 @@ export default {
   </section>
 </template>
 
- <style>
- .container {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 25% 25% 25%;
-  justify-content: center;
-
- }
+ <style scoped>
 .card {
   width: 270px;
   margin: 10px;
