@@ -65,6 +65,13 @@ export default {
   width: 500px;
   height: 40px;
 }
+ input {
+  padding: 0px;
+  font-size: 18px;
+  height: 100%;
+  background: white;
+  border: none;
+}
 .container {
   justify-content: center;
 }
