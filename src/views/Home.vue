@@ -48,6 +48,23 @@ export default {
 </template>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+ body {
+  margin: 0;
+}
+ .wrapper {
+  display: flex;
+  padding: 20px;
+  justify-content: space-around;
+  align-items: center;
+}
+ .searchMovie {
+  font-size: 0;
+  width: 500px;
+  height: 40px;
+}
 .container {
   justify-content: center;
 }
