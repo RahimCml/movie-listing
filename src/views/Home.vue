@@ -36,8 +36,8 @@ export default {
         <input type="submit" class="searchButton" @click="getMoviesWithSearch" value="GO">
       </div>
     </div>
-    <div class="container" v-if="movies">
-      <div v-for="movie in movies" :key="movie.imdbId">
+    <div class="container" v-if="movies.Search">
+      <div v-for="movie in movies.Search" :key="movie.imdbId">
         <MovieCard :data="movie"/>
       </div>
     </div>
@@ -47,7 +47,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 * {
   box-sizing: border-box;
 }
@@ -93,8 +93,5 @@ export default {
   grid-gap: 20px;
   grid-template-columns: 25% 25% 25%;
   justify-content: center;
-}
-.noFind {
-  padding: 10%
 }
 </style>

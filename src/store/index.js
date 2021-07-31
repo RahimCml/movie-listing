@@ -22,7 +22,7 @@ export default new Vuex.Store({
   actions: {
     async fetchMoviesSearch ({ commit }, search) {
       const res = await axios.get(`?s=${search}&apikey=e9e9888e`)
-      commit(Mutations.SET_MOVIES, res.data.Search)
+      commit(Mutations.SET_MOVIES, res.data)
     }
   }
 })
