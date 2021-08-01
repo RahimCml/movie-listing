@@ -10,11 +10,11 @@ export default {
     }
   },
   async created () {
-    await this.fetchMovieByImdbID(this.$route.params.Title)
+    await this.fetchMovieByTitle(this.$route.params.Title)
     this.isLoading = false
   },
   methods: {
-    ...mapActions(['fetchMovieByImdbID'])
+    ...mapActions(['fetchMovieByTitle'])
   },
   computed: {
     ...mapState(['movie'])
