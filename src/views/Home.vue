@@ -2,6 +2,7 @@
 
 import { mapActions, mapState } from 'vuex'
 import MovieCard from '@/components/MovieCard.vue'
+import { debounce } from 'debounce'
 
 export default {
   name: 'Home',
@@ -18,9 +19,9 @@ export default {
   },
   methods: {
     ...mapActions(['fetchMoviesSearch']),
-    getMoviesWithSearch () {
-      this.fetchMoviesSearch(this.search)
-    }
+    debounceInput: debounce(function (e) {
+      this.fetchMoviesSearch(this.search = e.target.value)
+    })
   },
   computed: {
     ...mapState(['movies'])
@@ -32,8 +33,7 @@ export default {
   <div class="home">
     <div class="wrapper">
       <div class="searchMovie">
-        <input type="text" class="searchText" v-model="search" placeholder="Film seciniz...">
-        <input type="submit" class="searchButton" @click="getMoviesWithSearch" value="GO">
+        <input type="text" v-on:input="debounceInput" class="searchText" v-model="search" placeholder="Film seciniz...">
       </div>
     </div>
     <div class="container" v-if="movies.Search">
@@ -79,14 +79,6 @@ export default {
   border-right: none;
   width: 420px;
   height: 100%;
-}
- .searchButton {
-  color: white;
-  background-color: #1ac8ed;
-  padding: 0 10px;
-  cursor: pointer;
-  border-radius: 0 5px 5px 0;
-  width: 80px;
 }
 .container {
   display: grid;
