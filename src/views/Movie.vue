@@ -50,4 +50,28 @@ export default {
 </template>
 
 <style scoped>
+.container {
+  display: grid;
+  grid-template-columns: 25% 25%;
+}
+img {
+  width: 290px;
+  margin-top: 47px;
+}
+.about {
+  margin-top: 90px;
+  margin-right: 50px;
+  text-align: left;
+  width: 300%;
+}
+span {
+  /* border: 0px solid black; */
+  background: rgb(34, 33, 33);
+  color:rgba(215, 216, 221, 0.816);
+}
+.anotherAbout {
+  width: 300%;
+  margin-left: 25px;
+  text-align: left;
+}
 </style>
