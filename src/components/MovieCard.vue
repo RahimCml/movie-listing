@@ -7,16 +7,18 @@ export default {
   }
 }
 </script>
+
 <template>
   <section>
     <div class="card">
       <div>
         <img class="card-image" :src="data.Poster" alt="image">
       </div>
-      <h3>
-        {{data.Title}}
-      </h3>
-      <p>Year: {{data.Year}} Type: {{data.Type}} </p>
+      <div v-if="data">
+        <h3>
+          <router-link :to="`/movie/${data.Title}`">{{data.Title}}</router-link>
+        </h3>
+      </div>
     </div>
   </section>
 </template>
