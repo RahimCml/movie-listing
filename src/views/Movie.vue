@@ -55,14 +55,14 @@ export default {
   grid-template-columns: 25% 25%;
 }
 img {
-  width: 290px;
+  width: 100%;
   margin-top: 47px;
 }
 .about {
-  margin-top: 90px;
-  margin-right: 50px;
+  margin-top: 11%;
+  margin-left: 15px;
   text-align: left;
-  width: 300%;
+  width: 298%;
 }
 span {
   /* border: 0px solid black; */

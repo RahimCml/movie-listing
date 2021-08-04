@@ -62,7 +62,7 @@ export default {
 }
  .searchMovie {
   font-size: 0;
-  width: 500px;
+  width: 110%;
   height: 40px;
 }
  input {
@@ -77,13 +77,13 @@ export default {
   border-radius: 5px 0 0 5px;
   border: 2px solid #1ac8ed;
   border-right: none;
-  width: 420px;
+  width: 30%;
   height: 100%;
 }
 .container {
   display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 25% 25% 25%;
+  grid-gap: 5%;
+  grid-template-columns: 30% 30% 30%;
   justify-content: center;
 }
 </style>
