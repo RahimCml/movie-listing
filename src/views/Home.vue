@@ -1,5 +1,4 @@
 <script>
-
 import { mapActions, mapState } from 'vuex'
 import MovieCard from '@/components/MovieCard.vue'
 import { debounce } from 'debounce'
@@ -20,8 +19,8 @@ export default {
   methods: {
     ...mapActions(['fetchMoviesSearch']),
     debounceInput: debounce(function (e) {
-      this.fetchMoviesSearch(this.search = e.target.value)
-    })
+      this.fetchMoviesSearch((this.search = e.target.value))
+    }, 2000)
   },
   computed: {
     ...mapState(['movies'])
@@ -33,12 +32,18 @@ export default {
   <div class="home">
     <div class="wrapper">
       <div class="searchMovie">
-        <input type="text" v-on:input="debounceInput" class="searchText" v-model="search" placeholder="Film seciniz...">
+        <input
+          type="text"
+          v-on:input="debounceInput"
+          class="searchText"
+          v-model="search"
+          placeholder="Film seciniz..."
+        />
       </div>
     </div>
     <div class="container" v-if="movies.Search">
       <div v-for="movie in movies.Search" :key="movie.imdbId">
-        <MovieCard :data="movie"/>
+        <MovieCard :data="movie" />
       </div>
     </div>
     <div class="noFind" v-else>
@@ -51,28 +56,28 @@ export default {
 * {
   box-sizing: border-box;
 }
- body {
+body {
   margin: 0;
 }
- .wrapper {
+.wrapper {
   display: flex;
   padding: 20px;
   justify-content: space-around;
   align-items: center;
 }
- .searchMovie {
+.searchMovie {
   font-size: 0;
   width: 110%;
   height: 40px;
 }
- input {
+input {
   padding: 0px;
   font-size: 18px;
   height: 100%;
   background: white;
   border: none;
 }
- .searchText {
+.searchText {
   text-indent: 5px;
   border-radius: 5px 0 0 5px;
   border: 2px solid #1ac8ed;
